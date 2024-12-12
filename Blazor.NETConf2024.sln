@@ -1,8 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.NETConf2024", "src\Blazor.NETConf2024\Blazor.NETConf2024.csproj", "{F05140DD-A126-45EA-94C5-2AF58A65826B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.NETConf2024.Client", "src\Blazor.NETConf2024.Client\Blazor.NETConf2024.Client.csproj", "{019858DF-5E30-4288-A4E5-63F1A1A2A594}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F05140DD-A126-45EA-94C5-2AF58A65826B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05140DD-A126-45EA-94C5-2AF58A65826B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05140DD-A126-45EA-94C5-2AF58A65826B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05140DD-A126-45EA-94C5-2AF58A65826B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{019858DF-5E30-4288-A4E5-63F1A1A2A594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{019858DF-5E30-4288-A4E5-63F1A1A2A594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{019858DF-5E30-4288-A4E5-63F1A1A2A594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{019858DF-5E30-4288-A4E5-63F1A1A2A594}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
