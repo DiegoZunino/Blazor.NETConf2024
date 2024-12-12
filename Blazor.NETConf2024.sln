@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.NETConf2024", "src\B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.NETConf2024.Client", "src\Blazor.NETConf2024.Client\Blazor.NETConf2024.Client.csproj", "{019858DF-5E30-4288-A4E5-63F1A1A2A594}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.NETConf2024.Api", "src\Blazor.NETConf2024.Api\Blazor.NETConf2024.Api.csproj", "{B56BA97B-0CDC-456D-AFC0-B9D48B7DB4B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.NETConf2024.Shared", "src\Blazor.NETConf2024.Shared\Blazor.NETConf2024.Shared.csproj", "{F5264896-9FF7-424C-B051-9DD99A16DD6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{019858DF-5E30-4288-A4E5-63F1A1A2A594}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{019858DF-5E30-4288-A4E5-63F1A1A2A594}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{019858DF-5E30-4288-A4E5-63F1A1A2A594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56BA97B-0CDC-456D-AFC0-B9D48B7DB4B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56BA97B-0CDC-456D-AFC0-B9D48B7DB4B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56BA97B-0CDC-456D-AFC0-B9D48B7DB4B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56BA97B-0CDC-456D-AFC0-B9D48B7DB4B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5264896-9FF7-424C-B051-9DD99A16DD6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5264896-9FF7-424C-B051-9DD99A16DD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5264896-9FF7-424C-B051-9DD99A16DD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5264896-9FF7-424C-B051-9DD99A16DD6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
