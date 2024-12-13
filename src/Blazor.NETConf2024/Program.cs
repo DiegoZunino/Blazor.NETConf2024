@@ -1,13 +1,18 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddServiceDefaults();
+
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
 builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
+builder.Services.AddHttpForwarderWithServiceDiscovery();
 
 var app = builder.Build();
+
+app.MapDefaultEndpoints();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -23,12 +28,13 @@ else
 
 app.UseAntiforgery();
 
-//app.MapStaticAssets();
-app.UseStaticFiles();
+app.MapStaticAssets();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
     .AddAdditionalAssemblies(typeof(Blazor.NETConf2024.Client._Imports).Assembly);
+
+app.MapForwarder("/weatherforecast", "http://blazor-netconf2024-api", "/weatherforecast");
 
 app.Run();

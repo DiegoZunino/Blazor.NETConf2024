@@ -7,8 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Blazor.NETConf2024.Client\Blazor.NETConf2024.Client.csproj"/>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.0"/>
+        <ProjectReference Include="..\Blazor.NETConf2024.Client\Blazor.NETConf2024.Client.csproj" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.0" />
+        <PackageReference Include="Microsoft.Extensions.ServiceDiscovery.Yarp" Version="9.0.0" />
+        <ProjectReference Include="..\Blazor.NETConf2024.ServiceDefaults\Blazor.NETConf2024.ServiceDefaults.csproj" />
         <ProjectReference Include="..\Blazor.NETConf2024.Shared\Blazor.NETConf2024.Shared.csproj" />
     </ItemGroup>
 
