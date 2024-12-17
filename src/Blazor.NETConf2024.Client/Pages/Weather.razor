@@ -1,7 +1,31 @@
 ﻿@page "/weather"
 @rendermode InteractiveWebAssembly
+@* @rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false)) *@
 
 <PageTitle>Weather</PageTitle>
+
+<div class="counter-bdg badge rounded-pill text-bg-primary">
+    @if(AssignedRenderMode is null)
+    {
+        <span>Static</span>
+    }
+    else if (AssignedRenderMode == InteractiveServer)
+    {
+        <span>Server</span>
+    }
+    else if (AssignedRenderMode == InteractiveWebAssembly)
+    {
+        <span>WebAssembly</span>
+    }
+    else if (AssignedRenderMode == InteractiveAuto)
+    {
+        <span>Auto</span>
+    }
+</div>
+
+<div class="counter-bdg badge rounded-pill text-bg-success">
+    <span>@RendererInfo.Name</span>
+</div>
 
 <h1>Weather</h1>
 

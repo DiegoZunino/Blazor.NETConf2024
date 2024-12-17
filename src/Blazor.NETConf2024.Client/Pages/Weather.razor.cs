@@ -6,6 +6,9 @@ public partial class Weather(IWeatherForecastService weatherForecastService)
 
     protected override async Task OnInitializedAsync()
     {
-        _forecasts = await weatherForecastService.GetListAsync();
+        if(RendererInfo.IsInteractive) // || (!RendererInfo.IsInteractive && AssignedRenderMode is null))
+        {
+            _forecasts = await weatherForecastService.GetListAsync();
+        }
     }
 }

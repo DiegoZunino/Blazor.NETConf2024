@@ -3,15 +3,57 @@
 
 <PageTitle>Counter</PageTitle>
 
+@if(AssignedRenderMode is null)
+{
+    <p class="text-bg-danger"> Warning: This component is not fully compatible with Server-Side Rendering (SSR) mode and may not function as expected. </p>
+}
+
+<div class="counter-bdg badge rounded-pill text-bg-primary">
+    @if(AssignedRenderMode is null)
+    {
+        <span>Static</span>
+    }
+    else if (AssignedRenderMode == InteractiveServer)
+    {
+        <span>Server</span>
+    }
+    else if (AssignedRenderMode == InteractiveWebAssembly)
+    {
+        <span>WebAssembly</span>
+    }
+    else if (AssignedRenderMode == InteractiveAuto)
+    {
+        <span>Auto</span>
+    }
+</div>
+
+<div class="counter-bdg badge rounded-pill text-bg-success">
+    <span>@RendererInfo.Name</span>
+</div>
+
 <h1>Counter</h1>
 
-<p role="status">Current count: @_currentCount</p>
+<button class="counter-btn btn @_btnClass" @onclick="IncrementCount">
+    @_btnText
+</button>
+<span class="counter-cnt" role="status">@_currentCount</span>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<p>Click the button to increment the counter.</p>
 
 @code {
     private int _currentCount;
+    private string? _btnClass = "btn-secondary";
+    private string? _btnText = "Loading...";
 
+    protected override async Task OnInitializedAsync()
+    {
+        if(RendererInfo.IsInteractive)
+        {
+            _btnClass = "btn-primary";
+            _btnText = "+1";
+        }
+    }
+    
     private void IncrementCount()
     {
         _currentCount++;
