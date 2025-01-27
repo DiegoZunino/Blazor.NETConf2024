@@ -1,0 +1,42 @@
+.AddAuthenticationStateSerialization(configure =>
+    {
+        configure.SerializeAllClaims = true;
+    });
+
+.AddAuthenticationStateSerialization(configure =>
+    {
+        configure.SerializeAllClaims = true;
+        configure.SerializationCallback = (authenticationState) =>
+        {
+            AuthenticationStateData? data = null;
+        
+            if (authenticationState.User.Identity?.IsAuthenticated ?? false)
+            {
+                data = new AuthenticationStateData();
+        
+                if (authenticationState.User.Identities.FirstOrDefault() is { } identity)
+                {
+                    data.NameClaimType = identity.NameClaimType;
+                    data.RoleClaimType = identity.RoleClaimType;
+                }
+        
+                if (authenticationState.User.FindFirst(data.NameClaimType) is { } nameClaim)
+                {
+                    data.Claims.Add(new(nameClaim));
+                }
+        
+                foreach (var roleClaim in authenticationState.User.FindAll(data.RoleClaimType))
+                {
+                    data.Claims.Add(new(roleClaim));
+                }
+        
+                // add custom claims
+                var timeZone = authenticationState.User.FindFirst("time-zone")?.Value;
+                if (!string.IsNullOrEmpty(timeZone))
+                {
+                    data.Claims.Add(new("time-zone", timeZone));
+                }
+            }
+            return ValueTask.FromResult(data);
+        };
+    });
